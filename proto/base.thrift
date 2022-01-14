@@ -1,4 +1,4 @@
-namespace java com.rbkmoney.fistful.reporter.base
+namespace java dev.vality.fistful.reporter.base
 namespace erlang fistful_reporter_base
 
 /**

@@ -1,6 +1,6 @@
 include "base.thrift"
 
-namespace java com.rbkmoney.fistful.reporter.file.storage
+namespace java dev.vality.fistful.reporter.file.storage
 namespace erlang fistful_reporter_file_storage
 
 /**

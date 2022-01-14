@@ -1,6 +1,6 @@
 include "base.thrift"
 
-namespace java com.rbkmoney.fistful.reporter.domain
+namespace java dev.vality.fistful.reporter.domain
 namespace erlang fistful_reporter_domain
 
 typedef base.ID PartyID

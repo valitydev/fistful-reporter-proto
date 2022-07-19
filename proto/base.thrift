@@ -1,5 +1,5 @@
 namespace java dev.vality.fistful.reporter.base
-namespace erlang fistful_reporter_base
+namespace erlang ffreport.base
 
 /**
  * Отметка во времени согласно RFC 3339.

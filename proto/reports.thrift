@@ -3,7 +3,7 @@ include "domain.thrift"
 include "file_storage.thrift"
 
 namespace java dev.vality.fistful.reporter
-namespace erlang ff_reports
+namespace erlang ffreport.reports
 
 typedef base.Timestamp Timestamp
 typedef file_storage.FileDataID FileDataID

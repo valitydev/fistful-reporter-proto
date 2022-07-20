@@ -1,7 +1,7 @@
 include "base.thrift"
 
 namespace java dev.vality.fistful.reporter.file.storage
-namespace erlang fistful_reporter_file_storage
+namespace erlang ffreport.filestore
 
 /**
 * Идентификатор файла из хранилища файлов

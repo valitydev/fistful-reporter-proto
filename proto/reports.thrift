@@ -8,7 +8,6 @@ namespace erlang ffreport.reports
 typedef base.Timestamp Timestamp
 typedef file_storage.FileDataID FileDataID
 typedef domain.PartyID PartyID
-typedef domain.ContractID ContractID
 typedef i64 ReportID
 typedef string ReportType
 
@@ -21,7 +20,6 @@ exception DatasetTooBig {
 }
 
 exception PartyNotFound {}
-exception ContractNotFound {}
 exception ReportNotFound {}
 /**
  * Исключение, сигнализирующее о непригодных с точки зрения бизнес-логики входных данных
@@ -33,8 +31,7 @@ exception InvalidRequest {
 
 struct ReportRequest {
     1: required PartyID party_id
-    2: required ContractID contract_id
-    3: required ReportTimeRange time_range
+    2: required ReportTimeRange time_range
 }
 
 /**
@@ -93,23 +90,22 @@ service Reporting {
   * Возвращает идентификатор отчета
   *
   * PartyNotFound, если party не найден
-  * ContractNotFound, если contract не найден
   * InvalidRequest, если промежуток времени некорректен
   */
-  ReportID GenerateReport(1: ReportRequest request, 2: ReportType report_type) throws (1: PartyNotFound ex1, 2: ContractNotFound ex2, 3: InvalidRequest ex3)
+  ReportID GenerateReport(1: ReportRequest request, 2: ReportType report_type) throws (1: PartyNotFound ex1, 2: InvalidRequest ex2)
 
   /**
   * Запрос на получение отчета
   *
   * ReportNotFound, если отчет не найден
   */
-  Report GetReport(1: PartyID party_id, 2: ContractID contract_id, 3: ReportID report_id) throws (1: ReportNotFound ex1)
+  Report GetReport(1: PartyID party_id, 2: ReportID report_id) throws (1: ReportNotFound ex1)
 
   /**
   * Запрос на отмену отчета
   *
   * ReportNotFound, если отчет не найден
   */
-  void CancelReport(1: PartyID party_id, 2: ContractID contract_id, 3: ReportID report_id) throws (1: ReportNotFound ex1)
+  void CancelReport(1: PartyID party_id, 2: ReportID report_id) throws (1: ReportNotFound ex1)
 
 }

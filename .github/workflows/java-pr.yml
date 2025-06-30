@@ -10,4 +10,6 @@ permissions:
 
 jobs:
   build:
+    with:
+      java-version: 21
     uses: valitydev/java-workflow/.github/workflows/maven-thrift-build.yml@v3
